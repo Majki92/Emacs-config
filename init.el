@@ -16,6 +16,9 @@
 ;; window size
 (setq default-frame-alist '((top . 0) (left . 0) (width . 200) (height . 55)))
 
+;; follow symlinks
+(setq vc-follow-symlinks t)
+
 (setq package-archives
       '(("gnu"       . "http://elpa.gnu.org/packages/")
         ("marmalade" . "https://marmalade-repo.org/packages/")

@@ -1,5 +1,5 @@
 #!/bin/bash
-ln -vsf $PWD/emacs ~/.emacs
+ln -vsf $PWD/init.el ~/.emacs
 mkdir -vp ~/.emacs.d
 ln -vsf $PWD/emacs.d/custom.el ~/.emacs.d/custom.el
 mkdir -vp ~/.emacs.d/modules

@@ -13,6 +13,8 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x r") 'revert-buffer)
 
+;; window size
+(setq default-frame-alist '((top . 0) (left . 0) (width . 200) (height . 55)))
 
 (setq package-archives
       '(("gnu"       . "http://elpa.gnu.org/packages/")
@@ -24,10 +26,12 @@
 (require 'use-package)
 
 ;; zenburn theme
-(add-hook 'after-init-hook '(lambda () (interactive) (load-theme 'zenburn)))
-(setq frame-background-mode 'dark)
-
-
+(use-package zenburn-theme
+  :ensure t
+  :demand
+  :config (progn
+          (add-hook 'after-init-hook '(lambda () (interactive) (load-theme 'zenburn)))
+          (setq frame-background-mode 'dark)))
 
 ;; syntax error highliting
 (use-package flycheck
@@ -45,7 +49,7 @@
   :init (add-hook 'emacs-lisp-mode-hook
 		  (lambda ()
 		    (paredit-mode 1))))
-
+		    
 ;; apply cmake parameters to company mode
 (use-package cpputils-cmake
   :ensure t

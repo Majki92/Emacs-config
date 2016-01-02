@@ -41,6 +41,14 @@
   :ensure t
   :init (global-flycheck-mode 1))
 
+;; rust mode
+(use-package rust-mode
+  :ensure t)
+
+;; toml mode
+(use-package toml-mode
+  :ensure t)
+
 ;; project management
 (use-package projectile
   :ensure t
